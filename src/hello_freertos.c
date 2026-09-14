@@ -26,7 +26,8 @@ void blink_task(__unused void *params) {
     while (true) {
         cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, on);
         if (count++ % 11) on = !on;
-        vTaskDelay(500);
+        // How fast the LED blinks on and off
+        vTaskDelay(100);
     }
 }
 
